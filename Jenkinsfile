@@ -45,14 +45,14 @@ pipeline {
 
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
-                    serverId: "jfrog",
+                    serverId: "myjfrog",
                     releaseRepo: "iq-libs-release",
                     snapshotRepo: "iq-libs-snapshot"
                 )
 
                 rtMavenResolver (
                     id: "MAVEN_RESOLVER",
-                    serverId: "jfrog",
+                    serverId: "myjfrog",
                     releaseRepo: "iq-libs-release",
                     snapshotRepo: "iq-libs-snapshot"
                 )

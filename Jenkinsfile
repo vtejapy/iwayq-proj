@@ -84,8 +84,8 @@ pipeline {
             steps {
                   sshagent(['node4']) {
                        
-                        sh "scp -o StrictHostKeyChecking=no Dockerfile vagrant@10.5.5.13:/home/vagrant"
-                        sh "scp -o StrictHostKeyChecking=no create-container-image.yaml vagrant@10.5.5.13:/home/vagrant"
+                        sh 'scp -o StrictHostKeyChecking=no Dockerfile vagrant@10.5.5.13:/home/vagrant'
+                        sh 'scp -o StrictHostKeyChecking=no create-container-image.yaml vagrant@10.5.5.13:/home/vagrant'
                     }
                 }
             
@@ -95,7 +95,7 @@ pipeline {
             steps {
                   sshagent(['node4']) {
                        
-                        sh "ssh -o StrictHostKeyChecking=no vagrant@10.5.5.13 -C \"sudo ansible-playbook create-container-image.yaml\""
+                        sh 'ssh -o StrictHostKeyChecking=no vagrant@10.5.5.13 -C \"sudo ansible-playbook create-container-image.yaml\"'
                         
                     }
                 }

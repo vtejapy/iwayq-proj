@@ -6,8 +6,8 @@
   - name: Pull .war artifact from Artifactory
     become: true
     get_url:
-      url: http://18.207.136.250:8082/artifactory/iwayq-libs-release-local/com/iwayq/iwayQApp/1.0-RELEASE/iwayQApp-1.0-RELEASE.war
-      dest: /home/ec2-user
+      url: http://10.5.5.12:8082/artifactory/iq-libs-release/com/iwayq/iwayQApp/1.0-RELEASE/iwayQApp-1.0-RELEASE.war
+      dest: /home/vagrant
       url_username: admin
       url_password: Admin123
 
@@ -23,7 +23,7 @@
     docker_image:
       name: iwayq
       build:
-        path: /home/ec2-user
+        path: /home/vagrant
         pull: no
         args:
           listen_port: 8080
@@ -31,13 +31,13 @@
 
   - name: Log into DockerHub
     docker_login:
-     username: iwayqdockertest
-     password: P2$$w0rd
+     username: teja624
+     password: terminator@10
 
     
   - name: Push to docker hub
     docker_image:
       name: iwayq
-      repository: iwayqdockertest/iwayq:1.0
+      repository: teja624/iwayq:1.0
       push: yes
       source: local

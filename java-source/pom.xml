@@ -71,7 +71,7 @@
     <repository>
         <id>central</id>
         <name>df36ef3cd307-releases</name>
-        <url>http://10.5.5.12:8081/artifactory/iq-libs-release</url>
+        <url>http://10.5.5.12:8082/artifactory/iq-libs-release</url>
     </repository>
 </distributionManagement>
 </project>

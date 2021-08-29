@@ -9,7 +9,7 @@
       url: http://10.5.5.12:8082/artifactory/iq-libs-release/com/iwayq/iwayQApp/1.0-RELEASE/iwayQApp-1.0-RELEASE.war
       dest: /home/vagrant
       url_username: admin
-      url_password: Admin123
+      url_password: password
 
   - name: Rename .war Artifact
     command: mv iwayQApp-1.0-RELEASE.war iwayq.war
